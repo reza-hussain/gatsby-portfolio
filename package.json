@@ -1,4 +1,5 @@
 {
+  "homepage": "http://reza-hussain.github.io/gatsby-portfolio",
   "name": "gatsby-starter-hello-world",
   "private": true,
   "description": "A simplified bare-bones starter for Gatsby",
@@ -14,14 +15,21 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^14.1.3",
     "gatsby": "^4.8.0",
+    "gatsby-plugin-sharp": "^4.9.0",
+    "gatsby-remark-images": "^6.9.0",
+    "gatsby-remark-relative-images": "^2.0.2",
+    "gatsby-source-contentful": "^7.7.1",
     "gatsby-source-filesystem": "^4.9.0",
+    "gatsby-transformer-remark": "^5.9.0",
     "node-sass": "^7.0.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
   "devDependencies": {
     "env-cmd": "^10.1.0",
+    "gh-pages": "^3.2.3",
     "prettier": "^2.5.1"
   },
   "repository": {

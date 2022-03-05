@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 
 import Layout from '../components/layout'
+import * as blogStyles from './blog.module.scss'
 
 
 
@@ -9,19 +10,19 @@ const BlogPage = () => {
 
     const data = useStaticQuery(graphql`
         query{
-            allMarkdownRemark{
+            allContentfulProjects(
+                sort:{
+                  fields:publishedDate
+                  order: ASC
+                  }
+              ){
                 edges{
-                    node{
-                        frontmatter{
-                            title
-                            date
-                        }
-                        html
-                        excerpt
-                        fields{
-                            slug
-                        }
-                    }
+                  node{
+                    title
+                    shortDescription
+                    publishedDate(formatString:"MMMM Do, YYYY")
+                    viewProject
+                  }
                 }
             }
         }
@@ -32,15 +33,27 @@ const BlogPage = () => {
     return (
         <Layout>
             <>
-                <h1>Blog</h1>
-                <ol>
-                    {data.allMarkdownRemark.edges.map((edge) => {
+                <h1>Projects</h1>
+                <ol className={blogStyles.posts}>
+                    {data.allContentfulProjects.edges.map((edge) => {
                         return(
-                            <li>
-                                
-                                <Link to={`/blog/${edge.node.fields.slug}`}><h2>{edge.node.frontmatter.title}</h2></Link>
-                                <p>{edge.node.frontmatter.date}</p>
-                            </li>
+                            <>
+                            <ul className={blogStyles.grid}>
+                                <li className={blogStyles.post}>
+                                    <div className={blogStyles.postContent}>
+                                        <h3>{edge.node.title}</h3>
+                                        <p>{edge.node.publishedDate}</p>
+                                    </div>
+                                    <div className={blogStyles.postHover}>
+                                        <h5>{edge.node.shortDescription}</h5>
+                                        <p className={blogStyles.postIcons}>
+                                        <a href='https://github.com/reza-hussain'target="_blank"><i className='bi bi-github'/></a>
+                                            <i className='bi bi-globe'></i>
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                            </>
                         )
                     })}
                 </ol>
