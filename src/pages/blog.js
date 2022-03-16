@@ -22,6 +22,7 @@ const BlogPage = () => {
                     shortDescription
                     publishedDate(formatString:"MMMM Do, YYYY")
                     viewProject
+                    githubLink
                   }
                 }
             }
@@ -47,8 +48,8 @@ const BlogPage = () => {
                                     <div className={blogStyles.postHover}>
                                         <h5>{edge.node.shortDescription}</h5>
                                         <p className={blogStyles.postIcons}>
-                                        <a href='https://github.com/reza-hussain'target="_blank"><i className='bi bi-github'/></a>
-                                            <i className='bi bi-globe'></i>
+                                        <a href={edge.node.githubLink}target="_blank"><i className='bi bi-github'/></a>
+                                        <a href={edge.node.viewProject}target="_blank"><i className='bi bi-globe'/></a>
                                         </p>
                                     </div>
                                 </li>
