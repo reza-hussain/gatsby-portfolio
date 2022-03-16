@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import {Helmet} from "react-helmet";
 import '../styles/index.scss'
 import Layout from '../components/layout'
 
@@ -8,7 +8,9 @@ import * as indexStyles from './index.module.scss'
 const IndexPage = () => {
     return (
         <>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"></link>
+        <Helmet>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"></link>
+        </Helmet>
         <Layout>
         <div className={indexStyles.main}>
             <div className={`${indexStyles.column} ${indexStyles.leftCol}`}>
