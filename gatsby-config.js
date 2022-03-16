@@ -15,6 +15,7 @@ module.exports = {
       }
     },
     `gatsby-plugin-sass`,
+    `gatsby-plugin-mini-css-class-name`,
     {
       resolve: 'gatsby-source-filesystem',
       options: {
