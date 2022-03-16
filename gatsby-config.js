@@ -16,6 +16,7 @@ module.exports = {
     },
     `gatsby-plugin-sass`,
     `gatsby-plugin-mini-css-class-name`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: 'gatsby-source-filesystem',
       options: {
