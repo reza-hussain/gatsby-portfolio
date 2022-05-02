@@ -7,7 +7,7 @@ import * as indexStyles from './index.module.scss'
 
 const IndexPage = () => {
     return (
-        <>
+        <div>
         <Helmet>
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"></link>
         </Helmet>
@@ -23,7 +23,7 @@ const IndexPage = () => {
             </div>
         </div>
         </Layout>
-        </>
+        </div>
     )
 }
 

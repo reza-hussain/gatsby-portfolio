@@ -1,6 +1,7 @@
 import React from 'react'
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 
+import BlogPost from '../components/BlogPost'
 import Layout from '../components/layout'
 import * as blogStyles from './blog.module.scss'
 
@@ -18,6 +19,12 @@ const BlogPage = () => {
               ){
                 edges{
                   node{
+                    projectImage{
+                        gatsbyImageData(
+                            layout:CONSTRAINED
+                            width: 500
+                        )
+                    }
                     title
                     shortDescription
                     publishedDate(formatString:"MMMM Do, YYYY")
@@ -38,23 +45,7 @@ const BlogPage = () => {
                 <ol className={blogStyles.posts}>
                     {data.allContentfulProjects.edges.map((edge) => {
                         return(
-                            <>
-                            <ul className={blogStyles.grid}>
-                                <li className={blogStyles.post}>
-                                    <div className={blogStyles.postContent}>
-                                        <h3>{edge.node.title}</h3>
-                                        <p>{edge.node.publishedDate}</p>
-                                    </div>
-                                    <div className={blogStyles.postHover}>
-                                        <h5>{edge.node.shortDescription}</h5>
-                                        <p className={blogStyles.postIcons}>
-                                        <a href={edge.node.githubLink}target="_blank"><i className='bi bi-github'/></a>
-                                        <a href={edge.node.viewProject}target="_blank"><i className='bi bi-globe'/></a>
-                                        </p>
-                                    </div>
-                                </li>
-                            </ul>
-                            </>
+                            <BlogPost edge={edge} />
                         )
                     })}
                 </ol>
