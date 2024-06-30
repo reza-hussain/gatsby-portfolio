@@ -28,7 +28,7 @@ const BlogPage = () => {
   return (
     <Layout>
       <>
-        <h1>Projects</h1>
+        <h1 style={{ color: "#7C99AC" }}>Projects</h1>
         <ol className={blogStyles.posts}>
           {data.allContentfulProjects.edges.map(edge => {
             return <BlogPost edge={edge} />

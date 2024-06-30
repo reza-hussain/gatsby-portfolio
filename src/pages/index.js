@@ -20,10 +20,18 @@ const IndexPage = () => {
             <h1>Reza Hussain</h1>
             <p>I build pixel-perfect and scalabale web applications</p>
             <p className={indexStyles.icons}>
-              <a target="_blank" href="https://github.com/reza-hussain">
+              <a
+                target="_blank"
+                href="https://github.com/reza-hussain"
+                rel="noreferrer"
+              >
                 <i className="bi bi-github"></i>
               </a>
-              <a target="_blank" href="https://linkedin.com/in/arezahussain">
+              <a
+                target="_blank"
+                href="https://linkedin.com/in/arezahussain"
+                rel="noreferrer"
+              >
                 <i className="bi bi-linkedin"></i>
               </a>
             </p>
