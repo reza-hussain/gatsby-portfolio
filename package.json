@@ -1,5 +1,5 @@
 {
-  "homepage": "http://reza-hussain.github.io/gatsby-portfolio",
+  "homepage": "http://reza-hu`s`sain.github.io/gatsby-portfolio",
   "name": "gatsby-starter-hello-world",
   "private": true,
   "description": "A simplified bare-bones starter for Gatsby",
@@ -27,10 +27,10 @@
     "gatsby-source-contentful": "^7.7.1",
     "gatsby-source-filesystem": "^4.9.0",
     "gatsby-transformer-remark": "^5.9.0",
-    "node-sass": "^7.0.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "sass": "^1.77.6"
   },
   "devDependencies": {
     "env-cmd": "^10.1.0",
